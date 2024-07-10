@@ -17,55 +17,49 @@ import java.util.List;
 
 public abstract class BasePage {
 
-    @FindBy(css = "span.title-level-1")
-    public List<WebElement> menuOptions;
-
-    @FindBy(css = "div[class='loader-mask shown']")
-    @CacheLookup
-    protected WebElement loaderMask;
-
-    @FindBy(css = "h1[class='oro-subtitle']")
-    public WebElement pageSubTitle;
-
-    @FindBy(css = "#user-menu > a")
-    public WebElement userName;
-
-    @FindBy(linkText = "Logout")
-    public WebElement logOutLink;
-
-    @FindBy(linkText = "My User")
-    public WebElement myUser;
-
     public BasePage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
+    @FindBy(xpath = "(//li[@data-id='dashboard'])[1]")
+    public WebElement dashboard;
 
-    /**
-     * @return page name, for example: Dashboard
-     */
-    public String getPageSubTitle() {
-        //ant time we are verifying page name, or page subtitle, loader mask appears
-        waitUntilLoaderScreenDisappear();
-//        BrowserUtils.waitForStaleElement(pageSubTitle);
-        return pageSubTitle.getText();
-    }
+    @FindBy(xpath = "(//a[@aria-label='Files'])[1]")
+    public WebElement files;
 
+    @FindBy(xpath = "(//a[@aria-label='Photos'])[1]")
+    public WebElement photos;
 
-    /**
-     * Waits until loader screen present. If loader screen will not pop up at all,
-     * NoSuchElementException will be handled  bu try/catch block
-     * Thus, we can continue in any case.
-     */
-    public void waitUntilLoaderScreenDisappear() {
-        try {
-            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.invisibilityOf(loaderMask));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    @FindBy(xpath = "(//a[@aria-label='Activity'])[1]")
+    public WebElement activity;
 
-    }
+    @FindBy(xpath = "(//a[@aria-label='Talk'])[1]")
+    public WebElement talk;
+
+    @FindBy(xpath = "(//a[@aria-label='Contacts'])[1]")
+    public WebElement contacts;
+
+    @FindBy(xpath = "(//a[@aria-label='Circles'])[1]")
+    public WebElement circles;
+
+    @FindBy(xpath = "(//a[@aria-label='Calendar'])[1]")
+    public WebElement calendar;
+
+    @FindBy(xpath = "(//a[@aria-label='Deck'])[1]")
+    public WebElement deck;
+
+    @FindBy(xpath = "//span[@aria-label='Magnify icon']")
+    public WebElement searchIcon;
+
+    @FindBy(xpath = "//div[@aria-label='Notifications']")
+    public WebElement notification;
+
+    @FindBy(xpath = "//div[@id='contactsmenu']")
+    public WebElement searchContacts;
+
+    @FindBy(xpath = "//div[@id='expand']")
+    public WebElement userIcon;
+
 
 
 
