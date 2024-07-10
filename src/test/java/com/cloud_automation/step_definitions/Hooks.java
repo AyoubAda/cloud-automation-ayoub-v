@@ -1,10 +1,7 @@
 package com.cloud_automation.step_definitions;
 
 
-
-
 import com.cloud_automation.utilities.BrowserUtils;
-import com.cloud_automation.utilities.ConfigurationReader;
 import com.cloud_automation.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -26,7 +23,6 @@ public class Hooks {
 
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
     //@Before (value = "@login", order = 2 )
@@ -48,9 +44,8 @@ public class Hooks {
         }
 
 
-
         BrowserUtils.sleep(2);
-        Driver.closeDriver();
+      //  Driver.closeDriver();
 
     }
 
