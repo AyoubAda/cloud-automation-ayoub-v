@@ -18,17 +18,17 @@ for ALL the SCENARIOS and even STEPS.
 public class Hooks {
 
     //import the @Before coming from io.cucumber.java
-    @Before (order = 1)
-    public void setupMethod(){
+ //   @Before (order = 1)
+ //   public void setupMethod(){
 
-        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+  //      Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 
-    }
+  //  }
 
     //@Before (value = "@login", order = 2 )
-    public void login_scenario_before(){
-        System.out.println("---> @Before: RUNNING BEFORE EACH SCENARIO");
-    }
+   // public void login_scenario_before(){
+     //   System.out.println("---> @Before: RUNNING BEFORE EACH SCENARIO");
+  //  }
 
     /*
     @After will be executed automatically after EVERY scenario in the project.
@@ -44,8 +44,8 @@ public class Hooks {
         }
 
 
-        BrowserUtils.sleep(2);
-      //  Driver.closeDriver();
+      //  BrowserUtils.sleep(2);
+       Driver.closeDriver();
 
     }
 
