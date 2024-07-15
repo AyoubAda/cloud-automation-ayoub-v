@@ -23,15 +23,8 @@ public class Hooks {
 
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
     }
-
-    //@Before (value = "@login", order = 2 )
-    public void login_scenario_before(){
-        System.out.println("---> @Before: RUNNING BEFORE EACH SCENARIO");
-    }
-
-    /*
-    @After will be executed automatically after EVERY scenario in the project.
-     */
+   
+  
     @After
     public void teardownMethod(Scenario scenario){
 
@@ -42,8 +35,16 @@ public class Hooks {
 
         }
 
+      
+       Driver.closeDriver();
 
-        Driver.closeDriver();
+    }
+
+    //@BeforeStep
+    public void setupStep(){
+        System.out.println("-----> @BeforeSTEP : Running before each step!");
+    }
+
 
     }
 
