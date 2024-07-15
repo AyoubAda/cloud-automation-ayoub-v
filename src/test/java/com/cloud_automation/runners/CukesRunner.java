@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {
+                "pretty",
                 "json:target/cucumber.json",
                 "html:target/cucumber-reports.html",
                 "rerun:target/rerun.txt",
@@ -15,7 +16,8 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/cloud_automation/step_definitions",
         dryRun = false,
-        tags = "@login",
+        tags = "@B34G9-130",
+        monochrome = true,
         publish = true
 )
 public class CukesRunner {}
