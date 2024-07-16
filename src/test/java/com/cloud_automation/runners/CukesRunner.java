@@ -14,8 +14,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/cloud_automation/step_definitions",
-        dryRun = false,
-        tags = "@login",
+        dryRun = false, 
+        tags = "@B34G9-130",
         publish = true
 )
 public class CukesRunner {}
