@@ -1,6 +1,7 @@
 package com.cloud_automation.pages;
 
 
+import com.cloud_automation.utilities.ConfigurationReader;
 import com.cloud_automation.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

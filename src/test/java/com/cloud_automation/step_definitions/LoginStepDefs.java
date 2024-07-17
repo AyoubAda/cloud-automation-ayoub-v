@@ -5,6 +5,7 @@ import com.cloud_automation.pages.LoginPage;
 import com.cloud_automation.utilities.ConfigurationReader;
 import com.cloud_automation.utilities.Driver;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 
 public class LoginStepDefs {
 
@@ -19,7 +20,7 @@ public class LoginStepDefs {
     @Given("user logged in with username as {string} and password as {string}")
     public void the_user_logged_in_with_username_as_and_password_as(String username, String password) {
 
-              loginPage.login(username, password);
+        loginPage.login(username, password);
 
     }
 }
